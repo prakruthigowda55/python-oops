@@ -1,0 +1,25 @@
+class Hotel:
+    hotel_name='xyz'
+    def __init__(self,branch,location,rating):
+        self.branch=branch
+        self.location=location
+        self.rating=rating
+    def display(self):
+        print("branch name:",self.branch)
+        print("location:",self.location)
+        print("rating:",self.rating)
+        print(Hotel.hotel_name)
+    @classmethod
+    def modify_hotel_name(cls,new_hotel_name):
+        cls.hotel_name=new_hotel_name
+    @staticmethod
+    def is_rating(rating):
+        if(rating<=2):
+            rating = rating+1
+            return(rating)
+htl1=Hotel("pqr",'abc',1)
+htl1.display()
+Hotel.modify_hotel_name('bfsg')
+htl1.display()
+htl1.rating=htl1.is_rating(htl1.rating)
+htl1.display()
